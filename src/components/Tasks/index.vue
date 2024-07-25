@@ -44,6 +44,7 @@ export default {
           this.context + "-criticality",
           this.context + "-reason",
         ],
+        status: [this.context],
         add: true,
         delete: false,
         selection: false,
