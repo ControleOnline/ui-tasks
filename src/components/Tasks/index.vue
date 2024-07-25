@@ -4,16 +4,14 @@
 <script>
 import DefaultTable from "@controleonline/ui-default/src/components/Default/DefaultTable";
 import { mapActions, mapGetters } from "vuex";
-import ActionBar from "./ActionBar";
 
 export default {
   components: {
     DefaultTable,
-    ActionBar,
   },
   props: {
     context: {
-      required: true
+      required: true,
     },
     loaded: {
       type: Boolean,
@@ -21,26 +19,31 @@ export default {
     },
     store: {
       required: true,
-      default: 'tasks'
+      default: "tasks",
     },
     peopleId: {
       required: false,
-    }
+    },
   },
   computed: {
     ...mapGetters({
-      myCompany: 'people/currentCompany',
-      columns: 'orders/columns',
+      myCompany: "people/currentCompany",
+      columns: "orders/columns",
     }),
 
     filters() {
-      return this.$store.getters[this.configs.store + '/filters'] || {}
+      return this.$store.getters[this.configs.store + "/filters"] || {};
     },
     configs() {
       let config = {
-        companyParam: 'provider_id',
+        companyParam: "provider_id",
         filters: true,
         store: this.store,
+        categories: [
+          this.context,
+          this.context + "-criticality",
+          this.context + "-reason",
+        ],
         add: true,
         delete: false,
         selection: false,
@@ -49,41 +52,35 @@ export default {
           category: {
             filters: {
               context: this.context,
-              company: '/people/' + this.myCompany.id
-            }
+              company: "/people/" + this.myCompany.id,
+            },
           },
           criticality: {
             filters: {
-              context: this.context + '-criticality',
-              company: '/people/' + this.myCompany.id
-            }
+              context: this.context + "-criticality",
+              company: "/people/" + this.myCompany.id,
+            },
           },
           reason: {
             filters: {
-              context: this.context + '-reason',
-              company: '/people/' + this.myCompany.id
-            }
+              context: this.context + "-reason",
+              company: "/people/" + this.myCompany.id,
+            },
           },
           taskStatus: {
             filters: {
-              context: this.context
-            }
-          }
+              context: this.context,
+            },
+          },
         },
         components: {
           tableActions: {
             //component: OtherInformations,
             props: {
-              context: this.context
-            }
+              context: this.context,
+            },
           },
-          headerActions: {
-            component: ActionBar,
-            props: {
-              context: this.context
-            }
-          }
-        }
+        },
       };
 
       if (this.peopleId) {
@@ -91,19 +88,16 @@ export default {
         config["full-height"] = false;
       }
       return config;
-    }
+    },
   },
   data() {
-    return {
-    };
+    return {};
   },
   created() {
     const filters = this.$copyObject(this.filters);
     filters.task_type = this.context;
-    this.$store.commit(this.configs.store + '/SET_FILTERS', filters);
-
+    this.$store.commit(this.configs.store + "/SET_FILTERS", filters);
   },
-  methods: {
-  },
+  methods: {},
 };
 </script>
