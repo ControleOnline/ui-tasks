@@ -74,14 +74,6 @@ export default {
             },
           },
         },
-        components: {
-          tableActions: {
-            //component: OtherInformations,
-            props: {
-              context: this.context,
-            },
-          },
-        },
       };
 
       if (this.peopleId) {
