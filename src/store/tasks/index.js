@@ -21,6 +21,13 @@ export default {
         name: "id",
         align: "center",
         label: "id",
+        to: function (value) {
+          return {
+            name: "SupportDetails",
+            params: { id: value },
+          };
+        },
+        
         format: function (value) {
           return "#" + value;
         },

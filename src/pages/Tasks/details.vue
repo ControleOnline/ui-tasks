@@ -1,5 +1,5 @@
 <template>
-  <TasksSummary :context="context" />
+  <TasksDetails :context="context" />
 </template>
 
 <script>
@@ -9,28 +9,21 @@ import { mapGetters } from "vuex";
 
 export default {
   components: {
-    TasksDetails
+    TasksDetails,
   },
   data() {
     return {
-      context: "relationship",
+      context: "support",
     };
   },
   computed: {
-    ...mapGetters({
-
-    }),
+    ...mapGetters({}),
   },
 
-  watch: {
+  watch: {},
 
-  },
+  created() {},
 
-  created() {
-
-  },
-
-  methods: {
-  },
+  methods: {},
 };
 </script>
