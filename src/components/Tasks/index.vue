@@ -42,7 +42,7 @@ export default {
   },
   created() {
     const filters = this.$copyObject(this.filters);
-    filters.task_type = this.context;
+    filters.type = this.context;
     this.$store.commit(this.configs.store + "/SET_FILTERS", filters);
   },
   methods: {},
