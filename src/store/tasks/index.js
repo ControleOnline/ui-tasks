@@ -49,7 +49,7 @@ export default {
         label: "taskStatus",
         list: "status/getItems",
         style: function (row) {
-          return { color: row.status?.color };
+          return { color: row?.taskStatus?.color };
         },
         format: function (value) {
           return value?.status;
