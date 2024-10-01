@@ -27,7 +27,7 @@ export default {
             params: { id: value },
           };
         },
-        
+
         format: function (value) {
           return "#" + value;
         },
@@ -69,7 +69,7 @@ export default {
         externalFilter: true,
 
         sortable: true,
-        editable: true,
+        editable: false,
         name: "client",
         align: "center",
         label: "client",
@@ -168,7 +168,6 @@ export default {
       },
       {
         externalFilter: true,
-
         sortable: true,
         editable: false,
         name: "registeredBy",
@@ -217,7 +216,8 @@ export default {
         externalFilter: true,
         inputType: "date-range",
         sortable: true,
-        editable: true,
+        editable: false,
+        add: false,
         name: "createdAt",
         align: "center",
         label: "createdAt",
@@ -247,7 +247,8 @@ export default {
         externalFilter: true,
         inputType: "date-range",
         sortable: true,
-        editable: true,
+        editable: false,
+        add: false,
         name: "alterDate",
         align: "center",
         label: "alterDate",

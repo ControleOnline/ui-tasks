@@ -1,4 +1,4 @@
-export default function getConfigs(store, context, myCompany) {
+export default function getConfigs(store, context, myCompany, user) {
   let config = {
     companyParam: "provider_id",
     filters: true,
@@ -9,7 +9,25 @@ export default function getConfigs(store, context, myCompany) {
     delete: false,
     selection: false,
     search: false,
+    initialData: {
+      registeredBy: {
+        label: user.realname,
+        id: user.id,
+      },
+    },
     columns: {
+      client: {
+        filters: {
+          company: "/people/" + myCompany.id,
+          link_type: "client",
+        },
+      },
+      taskFor: {
+        filters: {
+          company: "/people/" + myCompany.id,
+          link_type: "employee",
+        },
+      },
       category: {
         filters: {
           context: context,
