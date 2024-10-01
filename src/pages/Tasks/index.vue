@@ -11,14 +11,17 @@ export default {
   },
   data() {
     return {
-      context: 'support',
+      context: "support",
     };
   },
-  computed: {
-  },
+  computed: {},
+
   created() {
+    const filters = this.$copyObject(this.filters);
+    filters.taskFor = { label: this.user.realname, value: this.user.id };
+    this.$store.commit(this.configs.store + "/SET_FILTERS", filters);
   },
-  watch: {
-  },
+
+  watch: {},
 };
 </script>

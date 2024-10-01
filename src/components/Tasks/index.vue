@@ -36,7 +36,14 @@ export default {
     },
 
     configs() {
-      return getConfigs("tasks", this.context, this.myCompany,this.user);
+      return getConfigs(
+        "tasks",
+        this.context,
+        this.myCompany,
+        this.user,
+        this.$components,
+        this.$store
+      );
     },
   },
   data() {
@@ -45,8 +52,6 @@ export default {
   created() {
     const filters = this.$copyObject(this.filters);
     filters.type = this.context;
-    filters.taskFor = { label: this.user.realname, value: this.user.id };
-
     this.$store.commit(this.configs.store + "/SET_FILTERS", filters);
   },
   methods: {},

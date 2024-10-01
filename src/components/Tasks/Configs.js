@@ -1,4 +1,14 @@
-export default function getConfigs(store, context, myCompany, user) {
+import DefaultButtonDialog from "@controleonline/ui-default/src/components/Default/DefaultButtonDialog";
+import getModelConfigs from "@controleonline/ui-crm/src/components/Model/Configs";
+
+export default function getConfigs(
+  store,
+  context,
+  myCompany,
+  user,
+  $components,
+  $store
+) {
   let config = {
     companyParam: "provider_id",
     filters: true,
@@ -15,6 +25,19 @@ export default function getConfigs(store, context, myCompany, user) {
         id: user.id,
       },
     },
+
+    components: {
+      headerActions: [
+        {
+          component: DefaultButtonDialog,
+          props: {
+            component: $components.DefaultTable,
+          },
+          configs: getModelConfigs("proposal", myCompany, $components, $store),
+        },
+      ],
+    },
+
     columns: {
       client: {
         filters: {
@@ -23,6 +46,12 @@ export default function getConfigs(store, context, myCompany, user) {
         },
       },
       taskFor: {
+        filters: {
+          company: "/people/" + myCompany.id,
+          link_type: "employee",
+        },
+      },
+      registeredBy: {
         filters: {
           company: "/people/" + myCompany.id,
           link_type: "employee",

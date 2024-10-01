@@ -40,11 +40,16 @@ export default {
       return this.$store.getters["auth/user"];
     },
     configs() {
-      return getConfigs("tasks", this.context, this.myCompany, this.user);
+      return getConfigs(
+        "tasks",
+        this.context,
+        this.myCompany,
+        this.user,
+        this.$components,
+        this.$store
+      );
     },
   },
   watch: {},
-
-  methods: {},
 };
 </script>
