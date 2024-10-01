@@ -16,23 +16,7 @@
         />
       </templete>
     </div>
-    <div class="full-width sticky-bottom bg row">
-      <div class="col-11">
-        <q-editor
-          :style="{ 'max-height': '80px', height: '80px' }"
-          v-model="editor"
-          :toolbar="false"
-          class="full-width"
-        />
-      </div>
-      <div class="col-1">
-        <q-btn
-          class="btn-primary justify-end right"
-          icon="person"
-          label="teste"
-        />
-      </div>
-    </div>
+   
   </div>
 </template>
 
@@ -50,7 +34,7 @@ export default {
   },
 
   data() {
-    return { interations: [], editor: "" };
+    return { interations: [] };
   },
   created() {
     this.getInterations({ task: this.taskId }).then((data) => {
