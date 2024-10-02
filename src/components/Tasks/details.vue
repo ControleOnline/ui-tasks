@@ -25,7 +25,7 @@
     transition-prev="jump-up"
     transition-next="jump-up"
   >
-    <q-tab-panel name="interactions">
+    <q-tab-panel name="interactions" class="no-scroll q-pa-none full-height">
       <Messages :taskId="taskId" />
     </q-tab-panel>
     <q-tab-panel name="proposal"> Teste </q-tab-panel>
