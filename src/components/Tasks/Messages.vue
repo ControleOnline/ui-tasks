@@ -136,8 +136,9 @@ export default {
 
       return (
         ENTRYPOINT +
-        "/files/download/" +
+        "/files/" +
         file.replace(/\D/g, "") +
+        "/download" +
         "?_=" +
         btoa(file.fileName)
       );
