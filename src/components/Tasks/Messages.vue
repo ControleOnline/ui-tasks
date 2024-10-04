@@ -139,7 +139,7 @@ export default {
         "/files/download/" +
         file.replace(/\D/g, "") +
         "?_=" +
-        btoa(file.file_name)
+        btoa(file.fileName)
       );
     },
 
