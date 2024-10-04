@@ -11,7 +11,7 @@
       <div v-for="(interation, index) in interations" :key="index">
         <q-chat-message
           :name="interation.registeredBy.alias"
-          :avatar="getImage(interation.registeredBy.image)"
+          :avatar="$image(interation.registeredBy.image)"
           :text="[interation.id, interation.body]"
           :sent="interation.registeredBy.id == user.id"
           stamp="7 minutes ago"
@@ -41,7 +41,6 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import { ENTRYPOINT } from "app/config/entrypoint";
 
 export default {
   props: {
@@ -129,19 +128,6 @@ export default {
         this.page -= 1;
         this.loadInterations("top");
       }
-    },
-
-    getImage(file) {
-      if (!file) return "https://cdn.quasar.dev/img/avatar4.jpg";
-
-      return (
-        ENTRYPOINT +
-        "/files/" +
-        file.replace(/\D/g, "") +
-        "/download" +
-        "?_=" +
-        btoa(file.fileName)
-      );
     },
 
     sendMessage() {
