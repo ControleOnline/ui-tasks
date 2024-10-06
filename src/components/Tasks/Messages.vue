@@ -150,7 +150,13 @@ export default {
       params.visibility = "private";
       params.type = "comment";
       this.send(params).then((data) => {
-        console.log(data);
+        this.interations.push(data);
+        this.editor = "";
+        this.file = null;
+        setTimeout(() => {
+          const el = this.scrollContainer;
+          el.scrollTop = 9999;
+        }, 300);
       });
     },
   },
