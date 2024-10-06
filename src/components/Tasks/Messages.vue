@@ -2,7 +2,7 @@
   <div class="q-pa-md row justify-center">
     <div
       ref="scrollContainer"
-      style="width: 100%; max-width: 90%; height: 400px; overflow-y: auto"
+      style="width: 100%; height: 400px; overflow-y: auto"
       @scroll="onScroll"
     >
       <q-chat-message label="Sunday, 19th" />
@@ -30,6 +30,8 @@
       />
     </div>
     <div class="col-1">
+      <Menus />
+
       <q-btn
         class="btn-primary justify-end right"
         icon="send"
@@ -41,8 +43,12 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import Menus from "./Menus";
 
 export default {
+  components: {
+    Menus,
+  },
   props: {
     taskId: {
       required: true,
@@ -55,6 +61,7 @@ export default {
       editor: "",
       page: 1,
       isLoading: false,
+      file: null,
     };
   },
   mounted() {
@@ -67,6 +74,10 @@ export default {
     user() {
       return this.$store.getters["auth/user"];
     },
+    task() {
+      return this.$store.getters["tasks/item"];
+    },
+
     totalItems() {
       return this.$store.getters["task_interations/totalItems"];
     },
@@ -82,6 +93,7 @@ export default {
   methods: {
     ...mapActions({
       getInterations: "task_interations/getItems",
+      send: "task_interations/save",
     }),
 
     loadInterations(direction) {
@@ -131,7 +143,15 @@ export default {
     },
 
     sendMessage() {
-      // Lógica para enviar a mensagem
+      let params = {};
+      params.body = this.editor;
+      params.file = this.file;
+      params.task = "/tasks/" + this.taskId;
+      params.visibility = "private";
+      params.type = "comment";
+      this.send(params).then((data) => {
+        console.log(data);
+      });
     },
   },
 };

@@ -5,31 +5,9 @@
     :cardClass="'full-width'"
     :sectionClass="'full-width'"
   />
-
-  <q-tabs
-    v-model="tab"
-    no-caps
-    outside-arrows
-    mobile-arrows
-    class="bg-orange text-white shadow-2"
-  >
-    <q-tab name="interactions" label="interactions" />
-    <q-tab name="proposal" label="proposal" />
-  </q-tabs>
-
-  <q-tab-panels
-    v-model="tab"
-    animated
-    swipeable
-    vertical
-    transition-prev="jump-up"
-    transition-next="jump-up"
-  >
-    <q-tab-panel name="interactions" class="no-scroll q-pa-none full-height">
-      <Messages :taskId="taskId" />
-    </q-tab-panel>
-    <q-tab-panel name="proposal"> Teste </q-tab-panel>
-  </q-tab-panels>
+  <div class="no-scroll q-pa-none full-height full-width">
+    <Messages :taskId="taskId"  class="q-pa-none full-height full-width"/>
+  </div>
 </template>
 
 <script>
