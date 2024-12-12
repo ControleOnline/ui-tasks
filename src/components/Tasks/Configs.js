@@ -18,7 +18,7 @@ export default function getConfigs(
     add: true,
     delete: false,
     selection: false,
-    search: false,
+    search: true,
     initialData: {
       registeredBy: {
         label: user.realname,

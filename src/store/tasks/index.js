@@ -66,7 +66,7 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
 
         sortable: true,
         editable: false,
@@ -209,23 +209,6 @@ export default {
         },
         saveFormat: function (value) {
           return value ? "/people/" + (value.value || value) : null;
-        },
-      },
-
-      {
-        externalFilter: true,
-        inputType: "date-range",
-        sortable: true,
-        editable: false,
-        add: false,
-        name: "createdAt",
-        align: "center",
-        label: "createdAt",
-        saveFormat: function (value) {
-          return undefined;
-        },
-        format: function (value) {
-          return Formatter.formatDateYmdTodmY(value, true);
         },
       },
       {
