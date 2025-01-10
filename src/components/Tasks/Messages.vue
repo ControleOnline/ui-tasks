@@ -97,6 +97,7 @@ export default {
     }),
 
     loadInterations(direction) {
+      if (this.page < 1) this.page = 1;
       if (this.isLoading) return;
       this.isLoading = true;
 
