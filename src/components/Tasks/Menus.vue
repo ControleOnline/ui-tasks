@@ -53,7 +53,7 @@
           />
         </q-toolbar>
       </q-card-section>
-      <q-card-section class="row q-pa-md" :style="{ 'padding-top': '80px' }">
+      <q-card-section class="row q-pa-md">
         <component :is="module" />
       </q-card-section>
     </q-card>

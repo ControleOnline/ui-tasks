@@ -15,7 +15,7 @@ export default {
     columns: [
       {
         isIdentity: true,
-        externalFilter: true,
+        externalFilter: false,
         sortable: true,
         name: "id",
         align: "center",
@@ -25,7 +25,7 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
         sortable: true,
         editable: true,
         name: "body",

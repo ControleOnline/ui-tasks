@@ -15,7 +15,7 @@ export default {
     columns: [
       {
         isIdentity: true,
-        externalFilter: true,
+        externalFilter: false,
         sortable: true,
         editable: true,
         name: "id",
@@ -33,7 +33,7 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
         sortable: true,
         editable: true,
         name: "name",
@@ -41,7 +41,7 @@ export default {
         label: "name",
       },
       {
-        externalFilter: true,
+        externalFilter: false,
         sortable: true,
         editable: true,
         name: "taskStatus",
@@ -89,14 +89,14 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
 
         sortable: true,
         editable: true,
         name: "criticality",
         align: "center",
         label: "criticality",
-        externalFilter: true,
+        externalFilter: false,
         list: "categories/getItems",
         searchParam: "name",
         format: function (value) {
@@ -115,14 +115,14 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
 
         sortable: true,
         editable: true,
         name: "category",
         align: "center",
         label: "category",
-        externalFilter: true,
+        externalFilter: false,
         list: "categories/getItems",
         searchParam: "name",
         format: function (value) {
@@ -141,14 +141,14 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
 
         sortable: true,
         editable: true,
         name: "reason",
         align: "center",
         label: "reason",
-        externalFilter: true,
+        externalFilter: false,
         list: "categories/getItems",
         searchParam: "name",
         format: function (value) {
@@ -167,7 +167,7 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
         sortable: true,
         editable: false,
         name: "registeredBy",
@@ -189,7 +189,7 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
 
         sortable: true,
         editable: true,
@@ -212,7 +212,7 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
         inputType: "date-range",
         sortable: true,
         editable: true,
@@ -227,7 +227,7 @@ export default {
         },
       },
       {
-        externalFilter: true,
+        externalFilter: false,
         inputType: "date-range",
         sortable: true,
         editable: false,
