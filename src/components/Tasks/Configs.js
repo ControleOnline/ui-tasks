@@ -28,10 +28,7 @@ export default function getConfigs(
     components: {
       headerActions: [
         {
-          component: this.$components.DefaultButtonDialog,
-          props: {
-            component: $components.DefaultTable,
-          },
+          component: $components.DefaultButtonDialog,
           configs: getModelConfigs("proposal", myCompany, $components, $store),
         },
       ],
