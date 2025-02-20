@@ -13,7 +13,7 @@
           :name="interation.registeredBy.alias"
           :avatar="$image(interation.registeredBy.image)"
           :text="[interation.id, interation.body]"
-          :sent="interation.registeredBy.id == user.id"
+          :sent="interation.registeredBy.id == this.$auth.user.id"
           stamp="7 minutes ago"
         />
       </div>
@@ -71,9 +71,7 @@ export default {
 
   computed: {
     ...mapGetters({}),
-    user() {
-      return this.$store.getters["auth/user"];
-    },
+
     task() {
       return this.$store.getters["tasks/item"];
     },

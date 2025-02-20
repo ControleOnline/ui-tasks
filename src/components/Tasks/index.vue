@@ -30,9 +30,7 @@ export default {
     columns() {
       return this.$store.getters[this.configs.store + "/columns"] || {};
     },
-    user() {
-      return this.$store.getters["auth/user"];
-    },
+
     filters() {
       return this.$store.getters[this.configs.store + "/filters"] || {};
     },
@@ -42,7 +40,7 @@ export default {
         "tasks",
         this.context,
         this.myCompany,
-        this.user,
+        this.$auth.user,
         this.$components,
         this.$store
       );

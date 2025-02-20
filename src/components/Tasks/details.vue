@@ -41,15 +41,13 @@ export default {
     ...mapGetters({
       myCompany: "people/currentCompany",
     }),
-    user() {
-      return this.$store.getters["auth/user"];
-    },
+
     configs() {
       return getConfigs(
         "tasks",
         this.context,
         this.myCompany,
-        this.user,
+        this.$auth.user,
         this.$components,
         this.$store
       );
