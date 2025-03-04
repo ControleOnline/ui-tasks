@@ -70,15 +70,11 @@ export default {
   },
 
   computed: {
-    ...mapGetters({}),
+    ...mapGetters({
+      task: "tasks/item",
+      totalItems: "task_interations/totalItems",
+    }),
 
-    task() {
-      return this.$store.getters["tasks/item"];
-    },
-
-    totalItems() {
-      return this.$store.getters["task_interations/totalItems"];
-    },
     lastPage() {
       return Math.ceil(this.totalItems / 30);
     },

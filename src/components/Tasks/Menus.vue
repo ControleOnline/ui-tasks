@@ -62,6 +62,7 @@
 
 <script>
 import Explorer from "@controleonline/ui-contracts/src/components/Explorer";
+import { mapGetters } from "vuex";
 
 export default {
   components: { Explorer },
@@ -98,9 +99,10 @@ export default {
   },
 
   computed: {
-    task() {
-      return this.$store.getters["tasks/item"];
-    },
+    ...mapGetters({
+      task: "tasks/item",
+    }),
+
   },
 
   created() {},
