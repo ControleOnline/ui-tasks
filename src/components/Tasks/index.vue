@@ -28,11 +28,11 @@ export default {
       myCompany: "people/currentCompany",
     }),
     columns() {
-      return this.$store.getters[this.configs.store + "/columns"] || {};
+      return this.$store.getters[this.configs.store + "/columns"];
     },
 
     filters() {
-      return this.$store.getters[this.configs.store + "/filters"] || {};
+      return this.$store.getters[this.configs.store + "/filters"];
     },
 
     configs() {
