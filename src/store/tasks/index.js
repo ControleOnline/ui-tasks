@@ -6,8 +6,8 @@ import Formatter from "@controleonline/ui-common/src/utils/formatter.js";
 export default {
   namespaced: true,
   state: {
- item:{},
-items:[],
+    item: {},
+    items: [],
     resourceEndpoint: "tasks",
     isLoading: false,
     error: "",
@@ -56,13 +56,7 @@ items:[],
         format: function (value) {
           return value?.status;
         },
-        formatList: function (value) {
-          if (value && value["@id"])
-            return {
-              value: value["@id"].split("/").pop(),
-              label: value?.status,
-            };
-        },
+
         saveFormat: function (value) {
           return value ? "/statuses/" + (value.value || value) : null;
         },
@@ -79,13 +73,7 @@ items:[],
         format: function (value) {
           return value ? value?.name + " - " + value?.alias : " - ";
         },
-        formatList: function (value) {
-          if (value && value["@id"])
-            return {
-              value: value["@id"].split("/").pop(),
-              label: value?.name + " - " + value?.alias,
-            };
-        },
+
         saveFormat: function (value) {
           return value ? "/people/" + (value.value || value) : null;
         },
@@ -107,14 +95,6 @@ items:[],
         saveFormat: function (value) {
           return value ? "/categories/" + parseInt(value.value || value) : null;
         },
-        formatList: function (value) {
-          return value
-            ? {
-                label: value?.name,
-                value: value?.id,
-              }
-            : null;
-        },
       },
       {
         externalFilter: false,
@@ -132,14 +112,6 @@ items:[],
         },
         saveFormat: function (value) {
           return value ? "/categories/" + parseInt(value.value || value) : null;
-        },
-        formatList: function (value) {
-          return value
-            ? {
-                label: value?.name,
-                value: value?.id,
-              }
-            : null;
         },
       },
       {
@@ -159,14 +131,6 @@ items:[],
         saveFormat: function (value) {
           return value ? "/categories/" + parseInt(value.value || value) : null;
         },
-        formatList: function (value) {
-          return value
-            ? {
-                label: value?.name,
-                value: value?.id,
-              }
-            : null;
-        },
       },
       {
         externalFilter: false,
@@ -179,13 +143,7 @@ items:[],
         format: function (value) {
           return value ? value?.name + " - " + value?.alias : " - ";
         },
-        formatList: function (value) {
-          if (value && value["@id"])
-            return {
-              value: value["@id"].split("/").pop(),
-              label: value?.name + " - " + value?.alias,
-            };
-        },
+
         saveFormat: function (value) {
           return value ? "/people/" + (value.value || value) : null;
         },
