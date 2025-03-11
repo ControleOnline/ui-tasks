@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import Explorer from "@controleonline/ui-contracts/src/components/Explorer";
+import Explorer from "@controleonline/ui-contracts/src/vue/components/Explorer";
 import { mapGetters } from "vuex";
 
 export default {

@@ -12,7 +12,7 @@
 
 <script>
 import getConfigs from "./Configs";
-import DefaultDetail from "@controleonline/ui-default/src/components/Default/Common/DefaultDetail.vue";
+import DefaultDetail from "@controleonline/ui-default/src/vue/components/Default/Common/DefaultDetail.vue";
 import { mapActions, mapGetters } from "vuex";
 import Messages from "./Messages";
 
