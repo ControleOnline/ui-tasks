@@ -26,6 +26,7 @@ export default {
   computed: {
     ...mapGetters({
       myCompany: "people/currentCompany",
+      user: "auth/user",
     }),
     columns() {
       return this.$store.getters[this.configs.store + "/columns"];
@@ -40,7 +41,7 @@ export default {
         "tasks",
         this.context,
         this.myCompany,
-        this.$auth.user,
+        this.user,
         this.$components,
         this.$store
       );

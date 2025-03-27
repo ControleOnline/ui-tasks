@@ -40,6 +40,7 @@ export default {
   computed: {
     ...mapGetters({
       myCompany: "people/currentCompany",
+      user: "auth/user",
     }),
 
     configs() {
@@ -47,7 +48,7 @@ export default {
         "tasks",
         this.context,
         this.myCompany,
-        this.$auth.user,
+        this.user,
         this.$components,
         this.$store
       );

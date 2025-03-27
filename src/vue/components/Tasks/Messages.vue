@@ -13,7 +13,7 @@
           :name="interation.registeredBy.alias"
           :avatar="$image(interation.registeredBy.image)"
           :text="[interation.id, interation.body]"
-          :sent="interation.registeredBy.id == this.$auth.user.id"
+          :sent="interation.registeredBy.id == this.user.id"
           stamp="7 minutes ago"
         />
       </div>
@@ -73,6 +73,7 @@ export default {
     ...mapGetters({
       task: "tasks/item",
       totalItems: "task_interations/totalItems",
+      user: "auth/user",
     }),
 
     lastPage() {
