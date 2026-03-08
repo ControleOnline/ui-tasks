@@ -38,19 +38,19 @@ export default function getConfigs(
       client: {
         filters: {
           company: "/people/" + myCompany.id,
-          link_type: "client",
+          linkType: "client",
         },
       },
       taskFor: {
         filters: {
           company: "/people/" + myCompany.id,
-          link_type: "employee",
+          linkType: "employee",
         },
       },
       registeredBy: {
         filters: {
           company: "/people/" + myCompany.id,
-          link_type: "employee",
+          linkType: "employee",
         },
       },
       category: {
